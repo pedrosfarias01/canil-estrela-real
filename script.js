@@ -9,7 +9,7 @@ const CONFIG = {
   instagram: "",
 
   // Cidade que aparece no rodapé. Deixe "" para esconder.
-  cidade: "Cidade · UF",
+  cidade: "Serrinha - Bahia",
 
   // URL do Google Apps Script (veja README.md, passo "Planilha do Google").
   formEndpoint: "https://script.google.com/macros/s/AKfycbxmhw6zNc6Km-PQH-hOsUjo8paK_7lm2mB3Ye5jhbAvUwzf0qbW6zPEsildWTL4NcJV/exec",
