@@ -3,7 +3,7 @@
 // ============================================================
 const CONFIG = {
   // WhatsApp com código do país (55) + DDD + número, só dígitos. Ex.: "5511912345678"
-  whatsapp: "5500000000000",
+  whatsapp: "5571996782450",
 
   // Usuário do Instagram, sem @. Deixe "" para esconder o link.
   instagram: "",
@@ -13,6 +13,9 @@ const CONFIG = {
 
   // URL do Google Apps Script (veja README.md, passo "Planilha do Google").
   formEndpoint: "",
+
+  // A "Próxima ninhada" mostra sempre o mês atual + esse número de meses.
+  mesesAteProximaNinhada: 2,
 };
 
 
@@ -28,6 +31,13 @@ else insta.remove();
 
 document.getElementById("cidade-canil").textContent = CONFIG.cidade;
 document.getElementById("ano").textContent = new Date().getFullYear();
+
+// ============ Previsão da próxima ninhada (ex.: "Dezembro de 2026") ============
+const previsao = new Date();
+previsao.setDate(1); // evita pular mês em dias 29–31
+previsao.setMonth(previsao.getMonth() + CONFIG.mesesAteProximaNinhada);
+const mesAno = previsao.toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
+document.getElementById("previsao-ninhada").textContent = mesAno.charAt(0).toUpperCase() + mesAno.slice(1);
 
 
 // ============ Máscara do telefone: (11) 91234-5678 ============
