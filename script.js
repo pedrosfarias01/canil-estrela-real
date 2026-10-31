@@ -12,7 +12,7 @@ const CONFIG = {
   cidade: "Cidade · UF",
 
   // URL do Google Apps Script (veja README.md, passo "Planilha do Google").
-  formEndpoint: "",
+  formEndpoint: "https://script.google.com/macros/s/AKfycbxmhw6zNc6Km-PQH-hOsUjo8paK_7lm2mB3Ye5jhbAvUwzf0qbW6zPEsildWTL4NcJV/exec",
 
   // A "Próxima ninhada" mostra sempre o mês atual + esse número de meses.
   mesesAteProximaNinhada: 2,
