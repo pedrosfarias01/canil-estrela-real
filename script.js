@@ -3,7 +3,7 @@
 // ============================================================
 const CONFIG = {
   // WhatsApp com código do país (55) + DDD + número, só dígitos. Ex.: "5511912345678"
-  whatsapp: "5571996782450",
+  whatsapp: "5575983279235",
 
   // Usuário do Instagram, sem @. Deixe "" para esconder o link.
   instagram: "",
