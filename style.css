@@ -134,6 +134,7 @@ h2 { text-wrap: balance; }
 /* ============ ESTRUTURA ============ */
 .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; }
 .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+.gallery-ninhada img { aspect-ratio: 3 / 4; object-position: center 38%; }
 
 /* ============ HOTEL / FILHOTES (duas colunas) ============ */
 .split { display: grid; gap: 2.5rem; align-items: start; }
@@ -214,11 +215,18 @@ h2 { text-wrap: balance; }
 }
 
 /* ============ TELAS MAIORES (tablet / computador) ============ */
+@media (min-width: 760px) and (max-width: 959px) {
+  .nav { gap: .7rem; }
+  .nav a { font-size: .78rem; white-space: nowrap; }
+  .brand, .topbar .btn-small { flex-shrink: 0; }
+}
+
 @media (min-width: 760px) {
   .nav { display: flex; }
   .facts { grid-template-columns: repeat(4, 1fr); }
   .two-col { grid-template-columns: 1fr 1fr; }
   .gallery { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .gallery-ninhada { grid-template-columns: repeat(2, 1fr); }
   .split { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
   .split.split-portrait { align-items: center; }
   .section { padding: 96px 0; }
