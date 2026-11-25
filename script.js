@@ -9,7 +9,7 @@ const CONFIG = {
   instagram: "",
 
   // Cidade que aparece no rodapé. Deixe "" para esconder.
-  cidade: "Serrinha - Bahia",
+  cidade: "Serrinha – Bahia.",
 
   // URL do Google Apps Script (veja README.md, passo "Planilha do Google").
   formEndpoint: "https://script.google.com/macros/s/AKfycbxmhw6zNc6Km-PQH-hOsUjo8paK_7lm2mB3Ye5jhbAvUwzf0qbW6zPEsildWTL4NcJV/exec",
@@ -33,11 +33,14 @@ document.getElementById("cidade-canil").textContent = CONFIG.cidade;
 document.getElementById("ano").textContent = new Date().getFullYear();
 
 // ============ Previsão da próxima ninhada (ex.: "Dezembro de 2026") ============
-const previsao = new Date();
-previsao.setDate(1); // evita pular mês em dias 29–31
-previsao.setMonth(previsao.getMonth() + CONFIG.mesesAteProximaNinhada);
-const mesAno = previsao.toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
-document.getElementById("previsao-ninhada").textContent = mesAno.charAt(0).toUpperCase() + mesAno.slice(1);
+const previsaoEl = document.getElementById("previsao-ninhada");
+if (previsaoEl) {
+  const previsao = new Date();
+  previsao.setDate(1); // evita pular mês em dias 29–31
+  previsao.setMonth(previsao.getMonth() + CONFIG.mesesAteProximaNinhada);
+  const mesAno = previsao.toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
+  previsaoEl.textContent = mesAno.charAt(0).toUpperCase() + mesAno.slice(1);
+}
 
 
 // ============ Máscara do telefone: (11) 91234-5678 ============
@@ -91,6 +94,6 @@ form.addEventListener("submit", async (event) => {
     showMessage("Ops, não conseguimos enviar. Tenta de novo ou chama a gente no WhatsApp.", "error");
   } finally {
     button.disabled = false;
-    button.textContent = "Quero entrar na lista";
+    button.textContent = "Quero conhecer os filhotes";
   }
 });
